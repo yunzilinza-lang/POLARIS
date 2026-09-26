@@ -1,0 +1,8 @@
+{
+  "name": "Remix Polaris - Goal-Based Life Management",
+  "description": "Ekosistem manajemen hidup berbasis tujuan untuk mahasiswa dan anak muda. Menghubungkan aktivitas harian dengan tujuan masa depan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

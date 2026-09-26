@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-handwriting: 'Caveat', cursive, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+}
+
+
+.font-handwriting {
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes shadow-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes shooting-star-left {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-35deg);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.95;
+  }
+  7% {
+    transform: translateX(-280px) translateY(195px) rotate(-35deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-280px) translateY(195px) rotate(-35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-right {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-42deg);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.95;
+  }
+  6% {
+    transform: translateX(-240px) translateY(215px) rotate(-42deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-240px) translateY(215px) rotate(-42deg);
+    opacity: 0;
+  }
+}
+
+@keyframes nebula-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08) translate(15px, -10px);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.animate-shadow-breathe {
+  animation: shadow-breathe 7s ease-in-out infinite;
+}
+
+.animate-twinkle-1 {
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+
+.animate-twinkle-2 {
+  animation: twinkle 4.5s ease-in-out 1.2s infinite;
+}
+
+.animate-twinkle-3 {
+  animation: twinkle 2.8s ease-in-out 0.7s infinite;
+}
+
+/* Staggered Golden Shooting Stars */
+.animate-shooting-star-1 {
+  animation: shooting-star-left 9s ease-out infinite;
+}
+
+.animate-shooting-star-2 {
+  animation: shooting-star-right 12s ease-out 3.5s infinite;
+}
+
+.animate-shooting-star-3 {
+  animation: shooting-star-left 10s ease-out 1.8s infinite;
+}
+
+.animate-shooting-star-4 {
+  animation: shooting-star-right 14s ease-out 6s infinite;
+}
+
+.animate-shooting-star-5 {
+  animation: shooting-star-left 11s ease-out 4.2s infinite;
+}
+
+.animate-shooting-star-6 {
+  animation: shooting-star-right 13s ease-out 8.5s infinite;
+}
+
+.animate-nebula {
+  animation: nebula-pulse 16s ease-in-out infinite;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(163, 196, 235, 0.5);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(23, 59, 100, 0.4);
+}
