@@ -70,38 +70,38 @@
   }
 }
 
-@keyframes shooting-star-left {
+@keyframes shooting-star-diagonal-1 {
   0% {
-    transform: translateX(0) translateY(0) rotate(-35deg);
+    transform: translate3d(0, 0, 0) rotate(-35deg);
     opacity: 0;
   }
-  2% {
-    opacity: 0.95;
+  12% {
+    opacity: 1;
   }
-  7% {
-    transform: translateX(-280px) translateY(195px) rotate(-35deg);
+  65% {
+    transform: translate3d(-320px, 224px, 0) rotate(-35deg);
     opacity: 0;
   }
   100% {
-    transform: translateX(-280px) translateY(195px) rotate(-35deg);
+    transform: translate3d(-320px, 224px, 0) rotate(-35deg);
     opacity: 0;
   }
 }
 
-@keyframes shooting-star-right {
+@keyframes shooting-star-diagonal-2 {
   0% {
-    transform: translateX(0) translateY(0) rotate(-42deg);
+    transform: translate3d(0, 0, 0) rotate(-42deg);
     opacity: 0;
   }
-  2% {
-    opacity: 0.95;
+  12% {
+    opacity: 1;
   }
-  6% {
-    transform: translateX(-240px) translateY(215px) rotate(-42deg);
+  60% {
+    transform: translate3d(-290px, 260px, 0) rotate(-42deg);
     opacity: 0;
   }
   100% {
-    transform: translateX(-240px) translateY(215px) rotate(-42deg);
+    transform: translate3d(-290px, 260px, 0) rotate(-42deg);
     opacity: 0;
   }
 }
@@ -145,29 +145,40 @@
   animation: twinkle 2.8s ease-in-out 0.7s infinite;
 }
 
-/* Staggered Golden Shooting Stars */
+/* Staggered Golden Shooting Stars - Instant, Fluid & Non-blocking */
+.shooting-star-item {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
 .animate-shooting-star-1 {
-  animation: shooting-star-left 9s ease-out infinite;
+  animation: shooting-star-diagonal-1 4.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: 0s;
 }
 
 .animate-shooting-star-2 {
-  animation: shooting-star-right 12s ease-out 3.5s infinite;
+  animation: shooting-star-diagonal-2 5.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: -2.6s;
 }
 
 .animate-shooting-star-3 {
-  animation: shooting-star-left 10s ease-out 1.8s infinite;
+  animation: shooting-star-diagonal-1 5.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: -1.4s;
 }
 
 .animate-shooting-star-4 {
-  animation: shooting-star-right 14s ease-out 6s infinite;
+  animation: shooting-star-diagonal-2 4.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: -3.5s;
 }
 
 .animate-shooting-star-5 {
-  animation: shooting-star-left 11s ease-out 4.2s infinite;
+  animation: shooting-star-diagonal-1 6.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: -4.8s;
 }
 
 .animate-shooting-star-6 {
-  animation: shooting-star-right 13s ease-out 8.5s infinite;
+  animation: shooting-star-diagonal-2 5.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: -0.8s;
 }
 
 .animate-nebula {

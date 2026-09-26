@@ -214,7 +214,7 @@ export const CosmicGalaxyBackground: React.FC<CosmicGalaxyBackgroundProps> = ({ 
       {shootingStars.map((ss) => (
         <div
           key={ss.id}
-          className={`absolute ${ss.animation} pointer-events-none flex items-center`}
+          className={`absolute shooting-star-item ${ss.animation} pointer-events-none flex items-center`}
           style={{
             top: ss.top,
             left: ss.left,
