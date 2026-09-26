@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Check, Sun, User, Users } from 'lucide-react';
 import { PolarisLogo } from './PolarisLogo';
 import { SparkleIcon, CurvedArrowDownRight } from './SparkleIcon';
+import smartwatchHeroImg from '../assets/images/polaris_smartwatch_real_1790346412561.jpg';
 
 interface HeroProps {
   onOpenResearch: () => void;
@@ -168,7 +169,7 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Floating Smartwatch Object (Watch floating gently while base stays still) */}
               <div className="relative w-full h-full rounded-[40px] overflow-hidden drop-shadow-2xl transition-transform duration-500 hover:scale-[1.03] animate-float-slow">
                 <img
-                  src="/src/assets/images/polaris_smartwatch_real_1790346412561.jpg"
+                  src={smartwatchHeroImg}
                   alt="Polaris Photorealistic 3D Smartwatch"
                   className="w-full h-full object-cover rounded-[36px]"
                   referrerPolicy="no-referrer"

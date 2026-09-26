@@ -1,5 +1,10 @@
 import React from 'react';
 import { SparkleIcon, SparkleStarOutline, CurvedArrowUpLeft } from './SparkleIcon';
+import akademikImg from '../assets/images/category_akademik_1790344982740.jpg';
+import karierImg from '../assets/images/category_karier_1790344994228.jpg';
+import organisasiImg from '../assets/images/category_organisasi_1790345004694.jpg';
+import sosialImg from '../assets/images/category_sosial_1790345027884.jpg';
+import kesejahteraanImg from '../assets/images/category_kesejahteraan_1790345015437.jpg';
 
 export const TheChallenge: React.FC = () => {
   const challengeCards = [
@@ -7,31 +12,31 @@ export const TheChallenge: React.FC = () => {
       id: 'akademik',
       title: 'Akademik',
       subtitle: 'Tugas, kelas, ujian',
-      image: '/src/assets/images/category_akademik_1790344982740.jpg',
+      image: akademikImg,
     },
     {
       id: 'karier',
       title: 'Karier',
       subtitle: 'Magang, skill, masa depan',
-      image: '/src/assets/images/category_karier_1790344994228.jpg',
+      image: karierImg,
     },
     {
       id: 'organisasi',
       title: 'Organisasi',
       subtitle: 'Komunitas, event, leadership',
-      image: '/src/assets/images/category_organisasi_1790345004694.jpg',
+      image: organisasiImg,
     },
     {
       id: 'sosial',
       title: 'Sosial',
       subtitle: 'Teman, keluarga, relasi',
-      image: '/src/assets/images/category_sosial_1790345027884.jpg',
+      image: sosialImg,
     },
     {
       id: 'kesejahteraan',
       title: 'Kesejahteraan',
       subtitle: 'Kesehatan, mental, me time',
-      image: '/src/assets/images/category_kesejahteraan_1790345015437.jpg',
+      image: kesejahteraanImg,
     },
   ];
 
