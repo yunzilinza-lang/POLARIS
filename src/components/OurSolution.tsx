@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Target, CheckSquare, Sparkles, ArrowRight } from 'lucide-react';
 import { SparkleIcon } from './SparkleIcon';
 
+import { PixelRobotAvatar } from './PixelRobotAvatar';
+
 interface OurSolutionProps {
   onExploreClick: () => void;
 }
@@ -120,16 +122,16 @@ export const OurSolution: React.FC<OurSolutionProps> = ({ onExploreClick }) => {
                   />
                 </svg>
 
-                {/* Center Smartwatch */}
-                <div className="relative w-[130px] sm:w-[150px] h-[130px] sm:h-[150px] rounded-full bg-[#0E1A2D] shadow-2xl border-4 border-white dark:border-[#223B5C] flex flex-col items-center justify-center text-center p-3 text-white z-10 transition-transform duration-300 hover:scale-105">
-                  <div className="text-[#FFDE70] mb-1">
-                    <SparkleIcon size={14} />
+                {/* Center Polaris Band Companion Hub */}
+                <div className="relative w-[130px] sm:w-[155px] h-[130px] sm:h-[155px] rounded-full bg-[#0E1A2D] shadow-2xl border-4 border-[#FFDE70]/30 dark:border-[#223B5C] flex flex-col items-center justify-center text-center p-2.5 text-white z-10 transition-transform duration-300 hover:scale-105">
+                  <div className="mb-0.5">
+                    <PixelRobotAvatar emotion="happy" size={32} />
                   </div>
-                  <span className="text-xs sm:text-sm font-bold tracking-tight text-white leading-tight">
-                    Keep going
+                  <span className="text-[11px] sm:text-xs font-extrabold tracking-tight text-[#FFDE70] leading-tight">
+                    Polaris Band
                   </span>
-                  <span className="text-[9px] text-[#A0B8D4] leading-tight mt-0.5 max-w-[80px]">
-                    You're closer than you think
+                  <span className="text-[9px] text-[#A0B8D4] leading-tight mt-0.5 max-w-[90px] font-medium">
+                    You're closer than you think!
                   </span>
                 </div>
 

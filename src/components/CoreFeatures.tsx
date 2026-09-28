@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, ListTodo, Sparkles, Brain, Watch } from 'lucide-react';
+import { Target, ListTodo, Sparkles, Brain, Bot } from 'lucide-react';
 import { RadarChart } from './RadarChart';
 
 export const CoreFeatures: React.FC = () => {
@@ -105,22 +105,30 @@ export const CoreFeatures: React.FC = () => {
             </div>
           </div>
 
-          {/* Card 5: Wearable Companion */}
+          {/* Card 5: Smart Bracelet (Polaris Band) */}
           <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-2xl bg-[#D1FAE5] text-[#047857] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-2xs">
-              <Watch size={24} />
+            <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#0284C7] dark:bg-[#0C2E4E] dark:text-[#38BDF8] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-2xs">
+              <Bot size={24} />
+            </div>
+            <div className="flex items-center gap-1.5 mb-1">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#E1EEFB] dark:bg-[#1A365D] text-[#0E529F] dark:text-[#90CDF4]">
+                Hardware
+              </span>
             </div>
             <h3 className="text-lg font-bold text-[#102A4C] dark:text-white mb-2 leading-snug">
-              Wearable Companion
+              Polaris Smart Bracelet
             </h3>
             <p className="text-sm text-[#3B5A7E] dark:text-[#90A9C5] leading-relaxed font-medium">
-              Notifikasi, quick glance, dan fitur SOS untuk keamananmu.
+              Gelang pintar ramping dengan Pixel AI Companion, voice interaction, haptic reminder, dan tombol darurat SOS.
             </p>
             <div className="mt-auto pt-6 w-full">
-              <div className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#F0FDF4] dark:bg-[#132A2F] border border-[#DCFCE7] dark:border-[#1A3D43] text-[11px] text-[#15803D] dark:text-[#86EFAC] font-bold">
+              <a
+                href="#wearable"
+                className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-[#F0FDF4] dark:bg-[#132A2F] border border-[#DCFCE7] dark:border-[#1A3D43] text-[11px] text-[#15803D] dark:text-[#86EFAC] font-bold hover:bg-[#DCFCE7] dark:hover:bg-[#1A3D43] transition-colors"
+              >
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Sync Real-Time via BLE</span>
-              </div>
+                <span>Lihat Desain Polaris Band</span>
+              </a>
             </div>
           </div>
         </div>
