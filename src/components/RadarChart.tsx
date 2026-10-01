@@ -109,10 +109,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   return (
     <div className={`w-full flex flex-col items-center select-none ${className}`}>
       {/* SVG Canvas enclosed strictly within card boundaries */}
-      <div className="w-full max-w-[250px] aspect-[260/205] flex items-center justify-center overflow-hidden">
+      <div className="w-full max-w-[250px] aspect-[260/205] flex items-center justify-center">
         <svg
-          viewBox="0 0 260 205"
-          className="w-full h-full"
+          viewBox="-4 0 268 205"
+          className="w-full h-full overflow-visible"
         >
           {/* Background Concentric Radar Rings */}
           {gridLevels.map((lvl, lvlIdx) => {
@@ -206,21 +206,24 @@ export const RadarChart: React.FC<RadarChartProps> = ({
 
       {/* Preset Filter Tabs */}
       {interactive && (
-        <div className="flex items-center justify-center gap-1 mt-1.5 bg-[#E8F2FC] dark:bg-[#11233A] p-1 rounded-full border border-[#BED6F3] dark:border-[#1E3655] max-w-full overflow-x-auto">
-          {Object.entries(PRESETS).map(([key, item]) => (
-            <button
-              key={key}
-              type="button"
-              onClick={() => handleSelectPreset(key)}
-              className={`px-2 py-1 text-[10px] rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap ${
-                activePreset === key
-                  ? 'bg-white dark:bg-[#1D70E2] text-[#102A4C] dark:text-white shadow-xs font-bold'
-                  : 'text-[#3B5A7E] dark:text-[#8BAECC] hover:text-[#102A4C] font-medium'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
+        <div className="w-full mt-2 flex flex-wrap items-center justify-center gap-1.5 px-0.5">
+          {Object.entries(PRESETS).map(([key, item]) => {
+            const isActive = activePreset === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => handleSelectPreset(key)}
+                className={`px-2.5 py-1 text-[10px] sm:text-[10.5px] rounded-full transition-all duration-200 cursor-pointer font-semibold leading-tight text-center ${
+                  isActive
+                    ? 'bg-[#1D70E2] text-white shadow-xs font-bold scale-[1.02] ring-2 ring-[#1D70E2]/30'
+                    : 'bg-[#EBF3FC] dark:bg-[#15263F] text-[#2C4F77] dark:text-[#9AB8DA] hover:bg-[#DCEBFB] dark:hover:bg-[#1D3556] hover:text-[#102A4C] dark:hover:text-white border border-[#CDE1F7] dark:border-[#1E3A60]'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
         </div>
       )}
     </div>

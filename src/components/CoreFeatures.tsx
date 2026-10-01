@@ -21,9 +21,9 @@ export const CoreFeatures: React.FC = () => {
         </div>
 
         {/* 5 Cards Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-3.5 xl:gap-5">
           {/* Card 1: Goal Tracking */}
-          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-5 sm:p-6 lg:p-4.5 xl:p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-12 h-12 rounded-2xl bg-[#FEF3C7] text-[#D97706] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-2xs">
               <Target size={24} />
             </div>
@@ -47,7 +47,7 @@ export const CoreFeatures: React.FC = () => {
           </div>
 
           {/* Card 2: Activity Log */}
-          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-5 sm:p-6 lg:p-4.5 xl:p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-12 h-12 rounded-2xl bg-[#DBEAFE] text-[#0E529F] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-2xs">
               <ListTodo size={24} />
             </div>
@@ -70,7 +70,7 @@ export const CoreFeatures: React.FC = () => {
           </div>
 
           {/* Card 3: Life Balance Dashboard (Includes 5-axis Mini Radar Chart!) */}
-          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-5 sm:p-6 flex flex-col items-start border-2 border-[#A3C4EB] dark:border-[#284973] shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 lg:col-span-1 md:col-span-2 overflow-hidden">
+          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-5 sm:p-6 lg:p-4.5 xl:p-6 flex flex-col items-start border-2 border-[#A3C4EB] dark:border-[#284973] shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 lg:col-span-1 md:col-span-2">
             <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#0369A1] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-2xs">
               <Sparkles size={24} />
             </div>
@@ -82,13 +82,13 @@ export const CoreFeatures: React.FC = () => {
             </p>
 
             {/* Embedded 5-Axis Radar Chart */}
-            <div className="w-full flex justify-center py-1 overflow-hidden">
+            <div className="w-full mt-auto pt-2 flex flex-col items-center">
               <RadarChart interactive={true} />
             </div>
           </div>
 
           {/* Card 4: AI Companion */}
-          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-5 sm:p-6 lg:p-4.5 xl:p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-12 h-12 rounded-2xl bg-[#EDE9FE] text-[#6D28D9] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-2xs">
               <Brain size={24} />
             </div>
@@ -106,7 +106,7 @@ export const CoreFeatures: React.FC = () => {
           </div>
 
           {/* Card 5: Smart Bracelet (Polaris Band) */}
-          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div className="group bg-white dark:bg-[#12233A] rounded-[26px] p-5 sm:p-6 lg:p-4.5 xl:p-6 flex flex-col items-start border border-[#D5E5F7] dark:border-[#1E3656] shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-12 h-12 rounded-2xl bg-[#E0F2FE] text-[#0284C7] dark:bg-[#0C2E4E] dark:text-[#38BDF8] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-2xs">
               <Bot size={24} />
             </div>

@@ -185,6 +185,94 @@
   animation: nebula-pulse 16s ease-in-out infinite;
 }
 
+/* Polaris Smart Bracelet Wakes Up Cinematic Hero Keyframes */
+@keyframes pixel-bootup-scan {
+  0% {
+    opacity: 0;
+    filter: brightness(2.2) blur(1.5px);
+    clip-path: inset(100% 0 0 0);
+    transform: scale(0.92);
+  }
+  35% {
+    opacity: 0.5;
+    filter: brightness(1.8) blur(0.8px);
+    clip-path: inset(40% 0 0 0);
+  }
+  70% {
+    opacity: 0.9;
+    filter: brightness(1.2) blur(0.2px);
+    clip-path: inset(0 0 0 0);
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) blur(0px);
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes digital-time-resolve {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.08em;
+    filter: blur(1.2px);
+    transform: scale(0.96);
+  }
+  45% {
+    opacity: 0.7;
+    letter-spacing: 0.02em;
+    filter: blur(0.4px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: -0.03em;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
+@keyframes bracelet-calm-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -3.5px, 0);
+  }
+}
+
+.animate-pixel-bootup {
+  animation: pixel-bootup-scan 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-digital-time {
+  animation: digital-time-resolve 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bracelet-calm {
+  animation: bracelet-calm-float 6.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pixel-bootup,
+  .animate-digital-time,
+  .animate-bracelet-calm,
+  .animate-shooting-star-1,
+  .animate-shooting-star-2,
+  .animate-shooting-star-3,
+  .animate-shooting-star-4,
+  .animate-shooting-star-5,
+  .animate-shooting-star-6,
+  .animate-float-slow,
+  .animate-float-gentle,
+  .animate-shadow-breathe {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* Custom delicate scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
