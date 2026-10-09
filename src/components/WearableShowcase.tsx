@@ -122,7 +122,7 @@ export const WearableShowcase: React.FC = () => {
     <section className="py-16 md:py-24 relative overflow-hidden" id="wearable">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Card Container with Deep Cosmic Glass Style */}
-        <div className="relative bg-gradient-to-b from-[#0F223D] via-[#0A182B] to-[#06101D] text-white rounded-[36px] md:rounded-[48px] p-6 sm:p-10 lg:p-14 overflow-hidden shadow-2xl border border-white/15 backdrop-blur-xl">
+        <div className="relative bg-gradient-to-b from-[#0F223D] via-[#0A182B] to-[#06101D] text-white rounded-[32px] sm:rounded-[40px] md:rounded-[48px] p-5 sm:p-8 lg:p-14 overflow-hidden shadow-2xl border border-white/15 backdrop-blur-xl">
           {/* Subtle Ambient Backdrops */}
           <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-gradient-to-br from-[#1D70E2]/30 to-cyan-500/20 blur-3xl pointer-events-none" />
           <div className="absolute -bottom-32 right-0 w-[420px] h-[420px] rounded-full bg-gradient-to-tl from-[#FFDE70]/15 to-blue-600/20 blur-3xl pointer-events-none" />
@@ -182,7 +182,7 @@ export const WearableShowcase: React.FC = () => {
             {/* Left Column: Interactive Band Chassis & Hardware Visualizer */}
             <div className="lg:col-span-6 flex flex-col items-center justify-center relative">
               {/* Tab Selector */}
-              <div className="flex items-center gap-1 p-1 rounded-full bg-[#132742]/90 border border-white/15 mb-6 shadow-inner z-20 overflow-x-auto max-w-full">
+              <div className="flex items-center gap-1 p-1 rounded-full bg-[#132742]/90 border border-white/15 mb-6 shadow-inner z-20 overflow-x-auto max-w-full [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 <button
                   type="button"
                   onClick={() => setViewTab('interactive')}

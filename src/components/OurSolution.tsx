@@ -79,9 +79,9 @@ export const OurSolution: React.FC<OurSolutionProps> = ({ onExploreClick }) => {
             </div>
 
             {/* Right Column: Circular Diagram with central smartwatch & orbiting nodes */}
-            <div className="lg:col-span-6 relative flex items-center justify-center py-8">
+            <div className="lg:col-span-6 relative flex items-center justify-center py-8 overflow-hidden sm:overflow-visible">
               {/* Outer circular constellation container */}
-              <div className="relative w-[300px] sm:w-[380px] h-[300px] sm:h-[380px] flex items-center justify-center">
+              <div className="relative w-[290px] sm:w-[380px] h-[290px] sm:h-[380px] max-w-full flex items-center justify-center">
                 {/* SVG connection arrows */}
                 <svg
                   viewBox="0 0 400 400"
@@ -123,14 +123,14 @@ export const OurSolution: React.FC<OurSolutionProps> = ({ onExploreClick }) => {
                 </svg>
 
                 {/* Center Polaris Band Companion Hub */}
-                <div className="relative w-[130px] sm:w-[155px] h-[130px] sm:h-[155px] rounded-full bg-[#0E1A2D] shadow-2xl border-4 border-[#FFDE70]/30 dark:border-[#223B5C] flex flex-col items-center justify-center text-center p-2.5 text-white z-10 transition-transform duration-300 hover:scale-105">
+                <div className="relative w-[125px] sm:w-[155px] h-[125px] sm:h-[155px] rounded-full bg-[#0E1A2D] shadow-2xl border-4 border-[#FFDE70]/30 dark:border-[#223B5C] flex flex-col items-center justify-center text-center p-2 sm:p-2.5 text-white z-10 transition-transform duration-300 hover:scale-105">
                   <div className="mb-0.5">
-                    <PixelRobotAvatar emotion="happy" size={32} />
+                    <PixelRobotAvatar emotion="happy" size={30} />
                   </div>
                   <span className="text-[11px] sm:text-xs font-extrabold tracking-tight text-[#FFDE70] leading-tight">
                     Polaris Band
                   </span>
-                  <span className="text-[9px] text-[#A0B8D4] leading-tight mt-0.5 max-w-[90px] font-medium">
+                  <span className="text-[8.5px] sm:text-[9px] text-[#A0B8D4] leading-tight mt-0.5 max-w-[85px] sm:max-w-[90px] font-medium">
                     You're closer than you think!
                   </span>
                 </div>
@@ -144,15 +144,15 @@ export const OurSolution: React.FC<OurSolutionProps> = ({ onExploreClick }) => {
                   }`}
                 >
                   <div
-                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
+                    className={`w-13 h-13 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
                       activeNode === 'goal'
                         ? 'bg-white dark:bg-[#1A3456] ring-4 ring-[#1D70E2]/40 shadow-xl'
                         : 'bg-white dark:bg-[#152943] border border-[#BED6F3] dark:border-[#213D62]'
                     }`}
                   >
-                    <Target size={24} className="text-[#0E529F] dark:text-[#90CDF4]" />
+                    <Target size={22} className="text-[#0E529F] dark:text-[#90CDF4]" />
                   </div>
-                  <span className="mt-1.5 text-xs font-bold text-[#102A4C] dark:text-white whitespace-nowrap bg-white dark:bg-[#12233B]/90 px-2.5 py-0.5 rounded-full shadow-2xs border border-[#BED6F3] dark:border-transparent">
+                  <span className="mt-1 text-[11px] sm:text-xs font-bold text-[#102A4C] dark:text-white whitespace-nowrap bg-white dark:bg-[#12233B]/90 px-2 sm:px-2.5 py-0.5 rounded-full shadow-2xs border border-[#BED6F3] dark:border-transparent">
                     Goal Setting
                   </span>
                 </button>
@@ -161,20 +161,20 @@ export const OurSolution: React.FC<OurSolutionProps> = ({ onExploreClick }) => {
                 <button
                   type="button"
                   onClick={() => setActiveNode('activity')}
-                  className={`absolute bottom-3 left-4 sm:left-6 flex flex-col items-center group cursor-pointer transition-all duration-300 z-10 ${
+                  className={`absolute bottom-3 left-1 sm:left-6 flex flex-col items-center group cursor-pointer transition-all duration-300 z-10 ${
                     activeNode === 'activity' ? 'scale-110' : 'hover:scale-105'
                   }`}
                 >
                   <div
-                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
+                    className={`w-13 h-13 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
                       activeNode === 'activity'
                         ? 'bg-white dark:bg-[#1A3456] ring-4 ring-[#1D70E2]/40 shadow-xl'
                         : 'bg-white dark:bg-[#152943] border border-[#BED6F3] dark:border-[#213D62]'
                     }`}
                   >
-                    <CheckSquare size={24} className="text-[#0E529F] dark:text-[#90CDF4]" />
+                    <CheckSquare size={22} className="text-[#0E529F] dark:text-[#90CDF4]" />
                   </div>
-                  <span className="mt-1.5 text-xs font-bold text-[#102A4C] dark:text-white whitespace-nowrap bg-white dark:bg-[#12233B]/90 px-2.5 py-0.5 rounded-full shadow-2xs border border-[#BED6F3] dark:border-transparent">
+                  <span className="mt-1 text-[11px] sm:text-xs font-bold text-[#102A4C] dark:text-white whitespace-nowrap bg-white dark:bg-[#12233B]/90 px-2 sm:px-2.5 py-0.5 rounded-full shadow-2xs border border-[#BED6F3] dark:border-transparent">
                     Activity Tracking
                   </span>
                 </button>
@@ -183,26 +183,26 @@ export const OurSolution: React.FC<OurSolutionProps> = ({ onExploreClick }) => {
                 <button
                   type="button"
                   onClick={() => setActiveNode('reflection')}
-                  className={`absolute bottom-3 right-4 sm:right-6 flex flex-col items-center group cursor-pointer transition-all duration-300 z-10 ${
+                  className={`absolute bottom-3 right-1 sm:right-6 flex flex-col items-center group cursor-pointer transition-all duration-300 z-10 ${
                     activeNode === 'reflection' ? 'scale-110' : 'hover:scale-105'
                   }`}
                 >
                   <div
-                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
+                    className={`w-13 h-13 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
                       activeNode === 'reflection'
                         ? 'bg-white dark:bg-[#1A3456] ring-4 ring-[#1D70E2]/40 shadow-xl'
                         : 'bg-white dark:bg-[#152943] border border-[#BED6F3] dark:border-[#213D62]'
                     }`}
                   >
-                    <Sparkles size={24} className="text-[#0E529F] dark:text-[#90CDF4]" />
+                    <Sparkles size={22} className="text-[#0E529F] dark:text-[#90CDF4]" />
                   </div>
-                  <span className="mt-1.5 text-xs font-bold text-[#102A4C] dark:text-white whitespace-nowrap bg-white dark:bg-[#12233B]/90 px-2.5 py-0.5 rounded-full shadow-2xs border border-[#BED6F3] dark:border-transparent">
+                  <span className="mt-1 text-[11px] sm:text-xs font-bold text-[#102A4C] dark:text-white whitespace-nowrap bg-white dark:bg-[#12233B]/90 px-2 sm:px-2.5 py-0.5 rounded-full shadow-2xs border border-[#BED6F3] dark:border-transparent">
                     Reflection
                   </span>
                 </button>
 
-                {/* Handwritten note placed cleanly on the left side next to Goal Setting */}
-                <div className="absolute -top-6 -left-4 sm:-left-10 lg:-left-16 z-20 flex flex-col items-center rotate-[-6deg] pointer-events-none select-none">
+                {/* Handwritten note placed cleanly on the left side next to Goal Setting (Desktop only to prevent mobile overflow) */}
+                <div className="hidden sm:flex absolute -top-6 -left-4 sm:-left-10 lg:-left-16 z-20 flex-col items-center rotate-[-6deg] pointer-events-none select-none">
                   <span className="font-handwriting text-2xl sm:text-3xl font-bold text-[#102A4C] dark:text-[#D5E5F7] tracking-wide whitespace-nowrap">
                     Your goals, <br />
                     our compass

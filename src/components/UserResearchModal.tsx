@@ -33,8 +33,8 @@ export const UserResearchModal: React.FC<UserResearchModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0B1526]/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg bg-white dark:bg-[#12233A] rounded-[32px] p-6 sm:p-8 shadow-2xl border border-[#D9E7F6] dark:border-[#1E3656] text-left">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#0B1526]/60 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-white dark:bg-[#12233A] rounded-[28px] sm:rounded-[32px] p-5 sm:p-8 shadow-2xl border border-[#D9E7F6] dark:border-[#1E3656] text-left">
         {/* Close Button */}
         <button
           type="button"

@@ -360,10 +360,10 @@ export const Hero: React.FC<HeroProps> = ({
           {/* ========================================================================= */}
           {/* RIGHT COLUMN: Cinematic Polaris Smart Bracelet Wakes Up Sequence          */}
           {/* ========================================================================= */}
-          <div className="lg:col-span-6 relative flex items-center justify-center min-h-[480px] sm:min-h-[540px]">
+          <div className="lg:col-span-6 relative flex flex-col items-center justify-center lg:min-h-[540px] pt-4 lg:pt-0">
             {/* Soft Ambient Radial Light Backdrop (Expands at 500ms when product reveals) */}
             <div
-              className={`absolute w-[360px] sm:w-[460px] h-[360px] sm:h-[460px] rounded-full bg-gradient-to-tr from-[#A3C4EB]/40 to-[#FFDE70]/30 dark:from-[#173B64]/50 dark:to-[#1E3B60]/30 blur-3xl -z-10 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`absolute w-[300px] sm:w-[460px] h-[300px] sm:h-[460px] rounded-full bg-gradient-to-tr from-[#A3C4EB]/40 to-[#FFDE70]/30 dark:from-[#173B64]/50 dark:to-[#1E3B60]/30 blur-3xl -z-10 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 motionStage >= 3 ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
               }`}
               style={{
@@ -371,9 +371,23 @@ export const Hero: React.FC<HeroProps> = ({
               }}
             />
 
-            {/* Handwritten script note: "Small steps, Big dreams" (Arrives with cards at 1500ms) */}
+            {/* Mobile-Only Cute Headline Note above Bracelet (Non-overlapping) */}
             <div
-              className={`absolute -top-3 right-4 sm:right-16 z-20 flex flex-col items-center rotate-6 pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`sm:hidden flex items-center justify-center gap-1.5 mb-2 pointer-events-none rotate-[-1deg] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                motionStage >= 9
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-2'
+              }`}
+            >
+              <span className="font-handwriting text-xl font-bold text-[#102A4C] dark:text-[#D5E5F7] tracking-wide">
+                Small steps, Big dreams
+              </span>
+              <span className="text-[#D97706] dark:text-[#FFDE70] text-sm">✦</span>
+            </div>
+
+            {/* Desktop Handwritten script note: "Small steps, Big dreams" */}
+            <div
+              className={`hidden sm:flex absolute -top-3 right-4 lg:right-4 xl:right-12 z-20 flex-col items-center rotate-6 pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 motionStage >= 9
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-3'
@@ -559,12 +573,13 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* ========================================================================= */}
-            {/* FLOATING CARDS: Fade & settle at 1500ms                                    */}
+            {/* FLOATING CARDS (DESKTOP ONLY: lg:block / lg:flex)                          */}
+            {/* Smoothly float to the sides without covering the center band on desktop    */}
             {/* ========================================================================= */}
 
-            {/* Floating Card Top-Left: "Today" Schedule */}
+            {/* Desktop Floating Card Left: "Today" Schedule */}
             <div
-              className={`absolute -top-4 sm:top-2 -left-2 sm:left-2 z-20 w-[190px] sm:w-[220px] bg-white dark:bg-[#13233A]/95 backdrop-blur-md rounded-[24px] p-4 shadow-xl border border-[#D5E5F7] dark:border-[#223955] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-2xl hover:-translate-y-1 ${
+              className={`hidden lg:block absolute -top-4 -left-4 xl:-left-8 z-20 w-[205px] xl:w-[225px] bg-white dark:bg-[#13233A]/95 backdrop-blur-md rounded-[24px] p-4 shadow-xl border border-[#D5E5F7] dark:border-[#223955] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-2xl hover:-translate-y-1 ${
                 motionStage >= 9
                   ? 'opacity-100 translate-y-0 scale-100'
                   : 'opacity-0 translate-y-3 scale-95 pointer-events-none'
@@ -619,9 +634,9 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
             </div>
 
-            {/* Floating Stat Cards Stacked on Right */}
+            {/* Desktop Floating Stat Cards Stacked on Right */}
             <div
-              className={`absolute -bottom-6 sm:bottom-4 -right-2 sm:right-0 z-20 flex flex-col gap-2.5 sm:gap-3 w-[180px] sm:w-[210px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`hidden lg:flex absolute -bottom-6 -right-4 xl:-right-8 z-20 flex-col gap-2.5 sm:gap-3 w-[190px] xl:w-[210px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 motionStage >= 9
                   ? 'opacity-100 translate-y-0 scale-100'
                   : 'opacity-0 translate-y-3 scale-95 pointer-events-none'
@@ -668,6 +683,111 @@ export const Hero: React.FC<HeroProps> = ({
                   </div>
                   <div className="text-[10px] text-[#4A6D95] dark:text-[#95AFD0] font-medium">
                     Active Members
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ========================================================================= */}
+            {/* MOBILE & TABLET COMPANION SECTION (lg:hidden)                             */}
+            {/* Perfectly stacked, zero collision, thumb-friendly touch targets           */}
+            {/* ========================================================================= */}
+            <div className="w-full max-w-sm mx-auto mt-6 flex flex-col gap-3 lg:hidden">
+              {/* Today's Schedule Interactive Card */}
+              <div className="bg-white dark:bg-[#13233A]/95 backdrop-blur-md rounded-[24px] p-4 sm:p-5 shadow-lg border border-[#D5E5F7] dark:border-[#223955] transition-all text-left">
+                <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-[#E2EFFC] dark:border-[#1E3655]/60">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs font-extrabold text-[#102A4C] dark:text-white uppercase tracking-wider">
+                      Today's Schedule
+                    </span>
+                  </div>
+                  <span className="text-[10px] text-[#0E529F] dark:text-[#90CDF4] font-bold px-2 py-0.5 rounded-full bg-[#E1EEFB] dark:bg-[#1C3352]">
+                    Sync ke Band
+                  </span>
+                </div>
+
+                <div className="space-y-2">
+                  {schedule.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => toggleScheduleItem(item.id)}
+                      className="w-full flex items-center gap-3 p-2 rounded-xl hover:bg-[#F4F9FF] dark:hover:bg-[#172B47] text-left transition-colors cursor-pointer group active:scale-[0.99]"
+                    >
+                      <div className="shrink-0">
+                        <div
+                          className={`w-3 h-3 rounded-full ${item.color} ${
+                            item.done ? 'ring-2 ring-emerald-500 scale-90' : ''
+                          } transition-all duration-200`}
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div
+                          className={`text-xs font-bold leading-tight truncate transition-colors ${
+                            item.done
+                              ? 'line-through text-slate-400 dark:text-slate-500'
+                              : 'text-[#102A4C] dark:text-white group-hover:text-[#1D70E2]'
+                          }`}
+                        >
+                          {item.title}
+                        </div>
+                        <div className="text-[10px] text-[#4A6D95] dark:text-[#88A6C7] font-medium mt-0.5">
+                          {item.time}
+                        </div>
+                      </div>
+                      {item.done ? (
+                        <div className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-500 flex items-center justify-center shrink-0">
+                          <Check size={12} />
+                        </div>
+                      ) : (
+                        <span className="text-[10px] text-[#7E9FCA] dark:text-[#7A98BA] group-hover:text-[#1D70E2] font-semibold shrink-0">
+                          Selesai
+                        </span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* 3 Quick Metrics Cards in a Balanced Grid */}
+              <div className="grid grid-cols-3 gap-2 w-full">
+                {/* Metric 1 */}
+                <div className="flex flex-col items-center text-center p-2.5 bg-white dark:bg-[#13233A]/95 backdrop-blur-md rounded-[18px] shadow-xs border border-[#D5E5F7] dark:border-[#223955]">
+                  <div className="w-7 h-7 rounded-full bg-[#E1EEFB] dark:bg-[#1C3352] text-[#0E529F] dark:text-[#90CDF4] flex items-center justify-center mb-1.5 shrink-0">
+                    <Sun size={14} />
+                  </div>
+                  <div className="text-xs sm:text-sm font-extrabold text-[#102A4C] dark:text-white leading-tight">
+                    150+
+                  </div>
+                  <div className="text-[9px] text-[#4A6D95] dark:text-[#95AFD0] font-medium leading-tight mt-0.5">
+                    Hours Content
+                  </div>
+                </div>
+
+                {/* Metric 2 */}
+                <div className="flex flex-col items-center text-center p-2.5 bg-white dark:bg-[#13233A]/95 backdrop-blur-md rounded-[18px] shadow-xs border border-[#D5E5F7] dark:border-[#223955]">
+                  <div className="w-7 h-7 rounded-full bg-[#D8E8F8] dark:bg-[#1C375C] text-[#102A4C] dark:text-[#A3C4EB] flex items-center justify-center mb-1.5 shrink-0">
+                    <User size={14} />
+                  </div>
+                  <div className="text-xs sm:text-sm font-extrabold text-[#102A4C] dark:text-white leading-tight">
+                    50+
+                  </div>
+                  <div className="text-[9px] text-[#4A6D95] dark:text-[#95AFD0] font-medium leading-tight mt-0.5">
+                    Top Experts
+                  </div>
+                </div>
+
+                {/* Metric 3 */}
+                <div className="flex flex-col items-center text-center p-2.5 bg-white dark:bg-[#13233A]/95 backdrop-blur-md rounded-[18px] shadow-xs border border-[#D5E5F7] dark:border-[#223955]">
+                  <div className="w-7 h-7 rounded-full bg-[#102A4C] text-[#FFDE70] flex items-center justify-center mb-1.5 shrink-0 shadow-xs">
+                    <Users size={14} />
+                  </div>
+                  <div className="text-xs sm:text-sm font-extrabold text-[#102A4C] dark:text-white leading-tight">
+                    5,000+
+                  </div>
+                  <div className="text-[9px] text-[#4A6D95] dark:text-[#95AFD0] font-medium leading-tight mt-0.5">
+                    Active Users
                   </div>
                 </div>
               </div>
